@@ -6,10 +6,9 @@ Contact: Sungkwang Mun, sungkwan@cavs.msstate.edu
 
 Center for Advanced Vehicular Systems, Mississippi State University, MS 39762
 
-## 
-
 ## Contributors:
 
+-   Sungkwang Mun, Mississippi State University
 -   Gehendra Sharma, Mississippi State University
 -   Daniela Tellkamp, Mississippi State University
 -   Nayeon Lee, Mississippi State University
@@ -66,9 +65,11 @@ GA results file saved to results/GA/ANN_nPop_500_nIter_100.mat
 
 -   Problem description: The example problem involves design of a flexible disc element (see figure below) that is the critical component of disc coupling. These disc elements are generally stacked together and connected between rotating parts. Due to the nature of how these elements get loaded during operation, they are prone to failure due to stretching and/or buckling. Hence, these are to be designed to resist failure due to buckling as well as tensile stretch.
 
-    ![A picture containing transport Description automatically generated](media/dd0f2ad92bd6b854ce68b407c119de7b.JPG)
+![flexible disc element](media/flexible_disc_element.JPG)
 
--   Design space: Considering the symmetry of disc element, the segment shown in the figure below was utilized for running the simulation where design variables in discs design are length as l, width as b, and thickness as t. Design variables, their bounds and design objectives considered are tabulated in the table below. A full factorial experiment was run at 5 levels in SolidWorks to generate the design data. The design data consisted of mass, stress and buckling load for various combination of length, width, and thickness. With the help of these data, our intention is to identify designs (combination of length, width, and thickness) that minimizes mass, stress while maximizing buckling load. We generate ternary plots to visualize solution space to enable designers to identify design solutions that simultaneously satisfy these multiple design objectives.
+-   Design space: Considering the symmetry of disc element, the segment shown in the figure below was utilized for running the simulation where design variables in disc design are length as l, width as b, and thickness as t. Design variables, their bounds and design objectives considered are tabulated in the table below. A full factorial experiment was run at 5 levels in SolidWorks to generate the design data. The design data consisted of mass, stress and buckling load for various combination of length, width, and thickness. With the help of these data, our intention is to identify designs (combination of length, width, and thickness) that minimizes mass, stress while maximizing buckling load. We generate ternary plots to visualize solution space to enable designers to identify design solutions that simultaneously satisfy these multiple design objectives.
+
+![design variables in disc design](media/design_variables_in_disc_design.jpeg)
 
 | Variable Bounds | Design Variables | Design Objectives |              |                           |
 |-----------------|------------------|-------------------|--------------|---------------------------|
@@ -78,27 +79,27 @@ GA results file saved to results/GA/ANN_nPop_500_nIter_100.mat
 
 -   Split Training/Test dataset
 
-![Chart, scatter chart Description automatically generated](media/b3fc9c4fc32fa7fec5c8c647bf2d7e03.png)
+![Split Training/Test dataset](media/split_trainig_test_data.png)
 
 -   Prediction accuracy for more than two objectives
 
-    ![Chart, scatter chart Description automatically generated](media/8b3837bdbbadb757e9a63e965907eaa9.png)
+![Prediction accuracy for more than two objectives](media/prediction_accuracy_plot_2D.png)
 
--   Prediction accuracy for three design variables
+-   Predicted contour for three design variables
 
-    ![Graphical user interface, chart Description automatically generated](media/1a7d3d85e529749c1c8a85d65917eac5.png)
+![Prediction for three design variables](media/prediction_3_design_variables.png)
 
 -   Genetic algorithm results for two objectives with custom data tooltip that shows the input variables and output responses together (color code represents y-axis value)
 
-![Chart, scatter chart Description automatically generated](media/34e8c1e038b6f9b3ccc5f4b299bf82c3.png)
+![Genetic algorithm plot for two objectives](media/GA_2_objectives.png)
 
 -   Genetic algorithm results for three objectives with custom data tooltip that shows the input variables and output responses together (color code represents z-axis)
 
-![Chart, scatter chart Description automatically generated](media/ac8c3fa3766334a6f8224267a63db90f.png)
+![Genetic algorithm plot for three objectives](media/GA_3_objectives.png)
 
 -   Ternary plots
 
-![Chart Description automatically generated](media/afc5842c09279a24daa93d82bd457b38.png)
+![Ternary plots](media/ternary.png)
 
 Table 1 List of the points in the super imposed area in the ternary plot (screen output and csv file)
 
