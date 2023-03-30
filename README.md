@@ -65,7 +65,7 @@ GA results file saved to results/GA/ANN_nPop_500_nIter_100.mat
 
 -   Problem description: The example problem involves design of a flexible disc element (see figure below) that is the critical component of disc coupling. These disc elements are generally stacked together and connected between rotating parts. Due to the nature of how these elements get loaded during operation, they are prone to failure due to stretching and/or buckling. Hence, these are to be designed to resist failure due to buckling as well as tensile stretch.
 
-![flexible disc element](media/flexible_disc_element.JPG)
+![flexible disc element](media/flexible_disc_element.jpg)
 
 -   Design space: Considering the symmetry of disc element, the segment shown in the figure below was utilized for running the simulation where design variables in disc design are length as l, width as b, and thickness as t. Design variables, their bounds and design objectives considered are tabulated in the table below. A full factorial experiment was run at 5 levels in SolidWorks to generate the design data. The design data consisted of mass, stress and buckling load for various combination of length, width, and thickness. With the help of these data, our intention is to identify designs (combination of length, width, and thickness) that minimizes mass, stress while maximizing buckling load. We generate ternary plots to visualize solution space to enable designers to identify design solutions that simultaneously satisfy these multiple design objectives.
 
