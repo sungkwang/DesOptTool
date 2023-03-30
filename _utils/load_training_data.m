@@ -143,7 +143,7 @@ y_test = output_raw_data(:,ind_testing);
 x_all = input_raw_data;
 y_all = output_raw_data;
 
-if isfield(option,'col_major') && option.col_major
+if isfield(option,'row_major') && option.row_major
     x_train = x_train';
     x_test = x_test';
     x_all = x_all';
