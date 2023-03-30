@@ -107,10 +107,10 @@ for i=1:length(pid)
 
     dtRows = [];
     for j=1:length(var_str)
-         dtRows = [dtRows  dataTipTextRow(['In: ' var_str{j}], variables(inds,j))];
+         dtRows = [dtRows  dataTipTextRow(['In: ' var_str{j}], variables(:,j))];
     end
     for j=1:length(obj_str)
-         dtRows = [dtRows  dataTipTextRow(['Out: ' obj_str{j}], res(inds,j))];
+         dtRows = [dtRows  dataTipTextRow(['Out: ' obj_str{j}], res(:,j))];
     end
     pid(i).DataTipTemplate.DataTipRows = dtRows;
 end

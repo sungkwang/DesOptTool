@@ -19,52 +19,25 @@ else
 end
 num_total_data = size(raw_table,1);
 
+% For computational efficiency in Matlab, convert data from row major to column major
+
+input_raw_data = zeros(length(input_list), num_total_data);
 % error handling for input/output variable names
-input_raw_data = [];
 for i=1:length(input_list)
     if ~any(strcmp(input_list{i}, raw_table.Properties.VariableNames))
         head(raw_table)
         error([input_list{i} ' does not match any column names in the table.']);
     end
-    input_raw_data.(input_list{i})  = raw_table.(input_list{i});
+    input_raw_data(i,:) = raw_table.(input_list{i});
 end
-output_raw_data = [];
+output_raw_data = zeros(length(output_list),num_total_data);
 for i=1:length(output_list)
     if ~any(strcmp(output_list{i}, raw_table.Properties.VariableNames))
         head(raw_table)
         error([output_list{i} ' does not match any column names in the table.']);
     end
-    output_raw_data.(output_list{i}) = raw_table.(output_list{i});
+    output_raw_data(i,:) = raw_table.(output_list{i});
 end
-
-% convert struct to array
-input_raw_data = struct2array(input_raw_data);
-output_raw_data = struct2array(output_raw_data);
-
-% remove rows that contain nan values
-ind_to_exclude = any(isnan(input_raw_data),2) | any(isnan(output_raw_data),2);
-num_to_exclude = length(find(ind_to_exclude));
-disp(['Not-a-number/empty data: ' num2str(num_to_exclude) ' are removed from training database. Remaining: ' num2str(num_total_data-num_to_exclude)]);
-input_raw_data(ind_to_exclude,:)  = [];
-output_raw_data(ind_to_exclude,:)  = [];
-
-% remove rows that contain redundant data
-ind_to_exclude = any(isnan(input_raw_data),2) | any(isnan(output_raw_data),2);
-num_to_exclude = length(find(ind_to_exclude));
-disp(['Not-a-number/empty data: ' num2str(num_to_exclude) ' are removed from training database. Remaining: ' num2str(num_total_data-num_to_exclude)]);
-input_raw_data(ind_to_exclude,:)  = [];
-output_raw_data(ind_to_exclude,:)  = [];
-
-[u,I,J] = unique(input_raw_data, 'rows', 'first');
-
-ixDupRows = setdiff(1:size(input_raw_data,1), I)
-dupRowValues = input_raw_data(ixDupRows,:)
-
-% min_vals = min(input_raw_data);
-% max_vals = max(input_raw_data);
-
-input_raw_data = input_raw_data(I,:)';
-output_raw_data = output_raw_data(I,:)';
 
 %%% force to include boundary points in training set
 if isfield(option, 'include_bound_points') && option.include_bound_points
@@ -142,12 +115,3 @@ y_test = output_raw_data(:,ind_testing);
 % for total error
 x_all = input_raw_data;
 y_all = output_raw_data;
-
-if isfield(option,'col_major') && option.col_major
-    x_train = x_train';
-    x_test = x_test';
-    x_all = x_all';
-    y_train = y_train';
-    y_test = y_test';
-    y_all = y_all';    
-end
