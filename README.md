@@ -135,4 +135,4 @@ Table 1 List of the points in the super imposed area in the ternary plot (screen
 
 [3]: Ulrich Theune, Ternary Plots, v.1.0.0.0, 2005, <https://www.mathworks.com/matlabcentral/fileexchange/7210-ternary-plots>
 
-[4]: Daniela F. Tellkamp, Gehendra Sharma, Nayeon Lee, Sungkwang Mun, and Luke Peterson, Design Optimization of Deployable Protective Wall for Blast and Impact Mitigation Using Finite Element-Derived Surrogate Models, to be submitted.
+[4]: Daniela F. Tellkamp, Gehendra Sharma, Nayeon Lee, Sungkwang Mun, Daniel Johnson and Luke Peterson, Design Optimization of Deployable Protective Wall for Blast and Impact Mitigation Using Finite Element-Derived Surrogate Models, to be submitted.
