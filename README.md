@@ -16,7 +16,7 @@ Center for Advanced Vehicular Systems, Mississippi State University, MS 39762
 
 ## Requirements:
 
--   Matlab version greater than 2021a
+-   Matlab version 2021a and newer
 -   Matlab Deep Learning Toolbox
 
 ## Currently available surrogate modeling methods:
