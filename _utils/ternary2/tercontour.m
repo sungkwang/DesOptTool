@@ -196,13 +196,13 @@ legend(pid, option.legend_str);
 if all(isfield(option,{'variables','responses', 'var_str', 'obj_str'}))
     dtRows = [];
     for i=1:length(option.var_str)
-         dtRows = [dtRows  dataTipTextRow(['In: ' option.var_str{i}],option.variables(:,i))];
+         dtRows = [dtRows  dataTipTextRow(['In: ' option.var_str{i}],option.variables(option.ind_inter,i))];
     end
     for i=1:length(option.obj_str)
-         dtRows = [dtRows  dataTipTextRow(['Out: ' option.obj_str{i}],option.responses(:,i))];
+         dtRows = [dtRows  dataTipTextRow(['Out: ' option.obj_str{i}],option.responses(option.ind_inter,i))];
     end
     
-%     dtRows = [dataTipTextRow(['In: ' option.var_str{1}],option.variables(:,1)),...
+%     dtRows = [dataTipTextRow(['In: ' option.var_str{1}],option.variables(,1)),...
 %               dataTipTextRow(['In: ' option.var_str{2}],option.variables(:,2)),...
 %               dataTipTextRow(['In: ' option.var_str{3}],option.variables(:,3)),...
 %               dataTipTextRow(['Out: ' option.obj_str{1}],option.responses(:,1)), ...
